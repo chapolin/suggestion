@@ -40,7 +40,12 @@ h2{
 .input-group .form-control {
 	z-index: 0;
 }
-
+.input-group-btn{
+	vertical-align: top;
+}
+.tt-dataset{
+	margin-top: 35px;
+}
 
 /* ##### MENU ##### */
 

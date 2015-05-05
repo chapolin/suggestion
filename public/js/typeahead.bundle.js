@@ -1136,10 +1136,10 @@
                     verticalAlign: "top"
                 },
                 menu: {
-                    position: "absolute",
-                    top: "100%",
-                    left: "0",
-                    zIndex: "100",
+                    position: "relative",
+                    border: "1px solid #ccc",
+                    borderRadius: "4px",
+                    padding: "12px",
                     display: "none"
                 },
                 ltr: {
