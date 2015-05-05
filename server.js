@@ -7,12 +7,29 @@ var port = process.env.PORT || 8080;
 var MongoClient = require('mongodb').MongoClient;
 
 // Connect to the DB
-MongoClient.connect("mongodb://localhost:27017/test", function(err, db) {
+MongoClient.connect("mongodb://localhost:27017/suggestion", function(err, db) {
 	mongo = db;
-	
   if(!err) {
     console.log("We are connected");
   }
+});
+
+app.get('/createData', function(request, response) {
+	var collection = mongo.collection('services');
+	
+	  var lotsOfDocs = [
+	                    {'name':'Alinhamento'}, 
+	                    {'name':'Cambagem'}, 
+	                    {'name':'Escova'}, 
+	                    {'name':'Progressiva'}, 
+	                    {'name':'Buffets'}, 
+	                    {'name':'Insulfim'}, 
+	                    {'name':'Balanciamento'}, 
+	                    {'name':'Aquecedores'} ,
+	                    {'name':'Caster'}
+	                    ];
+
+	  collection.insert(lotsOfDocs, {w:1}, function(err, result) {});
 });
 
 app.get('/search', function(request, response) {
