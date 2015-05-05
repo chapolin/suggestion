@@ -7,7 +7,9 @@ var port = process.env.PORT || 8080;
 var MongoClient = require('mongodb').MongoClient;
 
 // Connect to the DB
-MongoClient.connect("mongodb://localhost:27017/suggestion", function(err, db) {
+MongoClient.connect(
+		"mongodb://suggestion:susuggestion@ds031922.mongolab.com:31922/heroku_app36543480", 
+		function(err, db) {
 	mongo = db;
   if(!err) {
     console.log("We are connected");
