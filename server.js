@@ -38,16 +38,17 @@ app.get('/search', function(request, response) {
 	var collection = mongo.collection('services');
 	var query = request.query.query;
 	
-	if(request.query.query && request.query.query.length >= 2) {
+	if(query && (query.length >= 2 || query == "all")) {
+		if(query == "all") {
+			query = "";
+		}
+		
 		var regExp = new RegExp("^" + query + ".*", "gi");
-		var suggestions = {
-			query: query,
-			items: []
-		};
+		var suggestions = [];
 		
 		collection.find({"name": regExp}, {_id: 0}).toArray(function(error, data) {
 			for(var i in data) {
-				suggestions.items.push(data[i]);
+				suggestions.push(data[i].name);
 			}
 			
 			response.json(suggestions);
@@ -57,6 +58,18 @@ app.get('/search', function(request, response) {
 		response.json({});
 		response.end();
 	}
+});
+
+//set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// make express look in the public directory for assets (css/js/img)
+app.use(express.static(__dirname + '/public'));
+
+// set the home page route
+app.get('/', function(req, res) {
+    // ejs render automatically looks in the views folder
+    res.render('index');
 });
 
 var server = app.listen(port, function() {
