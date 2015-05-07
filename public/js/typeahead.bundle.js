@@ -1137,10 +1137,10 @@
                 },
                 menu: {
                     position: "relative",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
+                    border: "none",
+                    margin: "-5px 0 0 0",
                     padding: "12px",
-                    display: "none"
+                    display: "block"
                 },
                 ltr: {
                     left: "0",

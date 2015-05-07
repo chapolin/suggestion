@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kotaki</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="slide-nav">
@@ -71,28 +73,21 @@
 <div id="page-content">
     <div class="container">
         <div class="row">
-<!-- ### FIRST STEP ### -->        
-            <div id="first-step" class="col-xs-12">
+            <div id="first-step" class="col-xs-12 hidden">
                 <form class="first-step">
                 <fieldset>
                 <div class="form-group">
                     <div class="col-xs-12">
                         <h2>Qual serviço vai usar?</h2>
-                        <div class="input-group">
-                            <div id="prefetch">
-                                <input class="typeahead tt-input form-control" type="text" placeholder="Serviço a cotar">
-                            </div>
-                            <div class="input-group-btn">
-                                <button id="btnNext" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-arrow-right"></i></button>
-                            </div>
+                        <div id="prefetch">
+                            <input class="typeahead tt-input form-control input-lg" type="text">
+                            <button type="button" class="btn btn-lg btn-primary btn-block btn-continue">Continuar</button>
                         </div>
                     </div>
                 </div>
-
                 </fieldset>
                 </form>
             </div>
-<!-- ### TWO STEP ### -->
             <div id="second-step" class="col-xs-12 hidden">
                 <form class="second-step">
                 <fieldset>
@@ -101,7 +96,7 @@
                         <h2>Qual valor tem em mãos?</h2>
                         <div class="input-group">
                             <div class="input-group-addon">R$</div>
-                            <input type="text" class="form-control" placeholder="00.00" name="price" id="price">
+                            <input type="text" class="form-control input-lg input-price" placeholder="00.00" name="price" id="price">
                         </div>
                     </div>
                 </div>
@@ -109,26 +104,23 @@
                 <div class="form-group">
                     <div class="col-xs-12">
                         <h2>Onde?</h2>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Nome do estabelecimento" name="name-establishment" id="name-establishment">
-                            <div class="input-group-btn">
-                                <button id="btnNext" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-arrow-right"></i></button>
-                            </div>
+                        <div class="form-group">
+                            <input class="typeahead tt-input form-control input-lg" type="text">
+                            <button type="button" class="btn btn-lg btn-primary btn-block btn-search">Buscar</button>
                         </div>
                     </div>
                 </div>
                 </fieldset>
                 </form>
             </div>
-<!-- ### THIRD STEP ### -->
-            <div id="third-step" class="col-xs-12 hidden">
+            <div id="third-step" class="col-xs-12">
                 <form class="form-horizontal">
                 <fieldset>
 
                 <h2>Balanceamento</h2>
 
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-list-services active"> <!-- Ativado como demonstração -->
+                    <div class="panel panel-list-services active">
                         <div class="panel-heading" role="tab" id="heading1">
                             <h4 class="panel-title">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
@@ -136,7 +128,7 @@
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1"> <!-- collapse in - ativado como demonstração -->
+                        <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
                             <div class="panel-body">
                                 <p>Rua Henrique Schaumann 531</p>
                                 <p>São Paulo SP</p>
@@ -208,7 +200,7 @@
                             <div class="panel-body">
                                 <p>Av. Prof. Francisco Morato 1449</p>
                                 <p>São Paulo SP</p>
-                                <p>05513-100  · Butantã</p>
+                                <p>05513-100 · Butantã</p>
                                 <p>Telefone: +55 (11) 3721-6818</p>
                             </div>
                         </div>
@@ -217,7 +209,7 @@
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <button id="nextbtn" name="nextbtn" class="btn btn-block btn-success">Pesquisar novo serviço</button>
+                        <button type="button" class="btn btn-lg btn-primary btn-block btn-search">Pesquisar novo serviço</button>
                     </div>
                 </div>
 
