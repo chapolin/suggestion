@@ -51,6 +51,7 @@ h2{
 	margin-top: 5px;
 }
 .tt-input{
+	margin-bottom:20px;
 	font-size: 16px;
 	color: #2e6da4;
 	border: 1px solid #337ab7;
@@ -71,7 +72,7 @@ h2{
 
 /* Botões */
 .btn-continue{ color: #fff; background-color: #337ab7; border-color: #2e6da4; }
-.btn-search{ margin-top: 20px; color: #fff; background-color: #337ab7; border-color: #2e6da4; }
+.btn-search{ color: #fff; background-color: #337ab7; border-color: #2e6da4; }
 
 /* ##### MENU ##### */
 
@@ -210,3 +211,5 @@ body.slide-active {
 	    left: 0!important;
 	}
 }
+
+#second-step, #third-step{display:none}

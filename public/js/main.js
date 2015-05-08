@@ -1,3 +1,6 @@
+var postData = {};
+
+
 $(document).ready(function () {
     if(".navbar-toggle .slide-active" === true){
         $("#first-step").addClass(".hidden");
@@ -44,21 +47,43 @@ $(document).ready(function () {
 
 
         $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
-
-
     });
 
-
     var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
-
 
     $(window).on("resize", function () {
 
         if ($(window).width() > 767 && $('.navbar-toggle').is(':hidden')) {
             $(selected).removeClass('slide-active');
         }
-
-
     });
 
+    $(".btn-step-1").click(function() {
+    	$("#first-step").show();
+    	$("#second-step").hide();
+    	$("#third-step").hide();
+    	
+    	$('input[name="_service"]').val("");
+    	$('input[name="_place"]').val("");
+    	$('input[name="_value"]').val("");
+    	
+    	postData = {};
+    });
+    
+    $(".btn-step-2").click(function() {
+    	$("#first-step").hide();
+    	$("#second-step").show();
+    	
+    	postData.service = $('input[name="_service"]').val(); 
+    });
+    
+    $(".btn-step-3").click(function() {
+    	$("#second-step").hide();
+    	$("#third-step").show();
+    	
+    	postData.value = $('input[name="_value"]').val();
+    	postData.place = $('input[name="_place"]').val();
+    });
+    
+    $('.money').mask("#.##0,00", {reverse: true});
 });

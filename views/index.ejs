@@ -77,18 +77,16 @@
                 <form class="first-step">
                 <fieldset>
                 <div class="form-group">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 prefetch-step-1">
                         <h2>Qual serviço vai usar?</h2>
-                        <div id="prefetch">
-                            <input class="typeahead tt-input form-control input-lg" type="text">
-                            <button type="button" class="btn btn-lg btn-primary btn-block btn-continue">Continuar</button>
-                        </div>
+                        <input name="_service" class="typeahead tt-input form-control input-lg" type="text">
+                        <button type="button" class="btn btn-lg btn-primary btn-block btn-continue btn-step-2">Continuar</button>
                     </div>
                 </div>
                 </fieldset>
                 </form>
             </div>
-            <div id="second-step" class="col-xs-12 hidden">
+            <div id="second-step" class="col-xs-12">
                 <form class="second-step">
                 <fieldset>
                 <div class="form-group">
@@ -96,24 +94,24 @@
                         <h2>Qual valor tem em mãos?</h2>
                         <div class="input-group">
                             <div class="input-group-addon">R$</div>
-                            <input type="text" class="form-control input-lg input-price" placeholder="00.00" name="price" id="price">
+                            <input name="_value" type="text" class="form-control input-lg input-price money" placeholder="00,00" name="price" id="price">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 prefetch-step-2">
                         <h2>Onde?</h2>
                         <div class="form-group">
-                            <input class="typeahead tt-input form-control input-lg" type="text">
-                            <button type="button" class="btn btn-lg btn-primary btn-block btn-search">Buscar</button>
+                            <input name="_place" class="typeahead tt-input form-control input-lg" type="text">
+                            <button type="button" class="btn btn-lg btn-primary btn-block btn-search btn-step-3">Buscar</button>
                         </div>
                     </div>
                 </div>
                 </fieldset>
                 </form>
             </div>
-            <div id="third-step" class="col-xs-12 hidden">
+            <div id="third-step" class="col-xs-12">
                 <form class="form-horizontal">
                 <fieldset>
                 <h2>Balanceamento</h2>
@@ -207,7 +205,7 @@
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <button type="button" class="btn btn-lg btn-primary btn-block btn-search">Pesquisar novo serviço</button>
+                        <button type="button" class="btn btn-lg btn-primary btn-block btn-search btn-step-1">Pesquisar novo serviço</button>
                     </div>
                 </div>
 
@@ -218,10 +216,11 @@
     </div>
 </div>
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
 <script src="js/main.js"></script>
-<!-- Search -->
+<script src="js/bootstrap.min.js"></script>
 <script src="js/typeahead.bundle.js"></script>
+<script src="js/handlebars.js"></script>
 <script src="js/prefetch.js"></script>
 </body>
 </html>

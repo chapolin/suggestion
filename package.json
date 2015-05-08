@@ -7,9 +7,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "*",
+    "express": "3.2.6",
     "mongodb": "*",
-    "ejs": "*" 
+    "ejs": "*"
   },
   "engines": {
     "node": "0.10.x"
