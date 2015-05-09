@@ -86,4 +86,10 @@ $(document).ready(function () {
     });
     
     $('.money').mask("#.##0,00", {reverse: true});
+
+    
+    $(".panel-list-services").click(function(){
+        $(".panel-list-services").removeClass("active");
+        $(this).addClass("active");
+    });
 });
