@@ -8,11 +8,13 @@ $font1: Arial;
 $sizeBase: 62.5%;
 
 $margin: 10px;
+$padding: 10px;
 
 @mixin font-size($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
 }
+
 
 html{
 	font-size: $sizeBase;
@@ -76,11 +78,11 @@ h2 {
 	p {
 		font-family: $font1;
 		@include font-size(1.4);
-		color: $cor1;
+		color: $cor2;
 	}
 }
 .panel-title {
-	color: $cor1;
+	color: $cor2;
 }
 .panel-list-services.active .panel-title {
 	color: $cor5;
@@ -101,13 +103,16 @@ h2 {
 .input-group-btn {
 	vertical-align: top;
 }
+.input-price{
+	color: $cor2;
+}
 .tt-dataset {
 	margin-top: $margin -5;
 }
 .tt-input {
 	margin-bottom: $margin + 10;
 	@include font-size(1.6);
-	color: $cor1;
+	color: $cor2;
 	border: 1px solid $cor4;
 }
 .tt-suggestion {
@@ -118,13 +123,13 @@ h2 {
 	background: $cor3;
 	line-height: 30px;
 	margin: 0 $margin;
-	padding: 6px;
+	padding: $padding - 4;
 	border: 1px solid $cor4;
 	border-radius: 4px;
 	display: inline-block;
 }
 .input-price {
-	color: $cor1;
+	color: $cor2;
 	border: 1px solid $cor4;
 }
 .input-group-addon {
@@ -140,10 +145,10 @@ body.slide-active {
 }
 #page-content {
 	position: relative;
-	padding-top: 70px;
+	padding-top: $padding + 60;
 	left: 0;
 	&.slide-active {
-		padding-top: 0;
+		padding-top: $padding - 10;
 	}
 }
 #slide-nav .navbar-toggle {
@@ -154,7 +159,7 @@ body.slide-active {
 	margin: 0;
 	width: 30px;
 	height: 40px;
-	padding: 10px 0 0 0;
+	padding-top: $padding;
 	border: 0;
 	background: transparent;
 	> .icon-bar {
@@ -174,12 +179,12 @@ body.slide-active {
 	#slide-nav {
 		.container {
 			margin: 0 !important;
-			padding: 0 !important;
+			padding: $padding !important;
 			height: 100%;
 		}	
 		.navbar-header {
 			margin: 0 auto;
-			padding: 0 15px;
+			padding: 0 $padding + 5;
 		}
 		.navbar.slide-active {
 			position: absolute;
@@ -193,7 +198,7 @@ body.slide-active {
 			width: 80%;
 			min-width: 0;
 			position: absolute;
-			padding-left: 0;
+			padding-left: $padding - 10;
 			z-index: 0;
 			top: -8px;
 			margin: $margin - 10;
