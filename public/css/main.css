@@ -1,7 +1,14 @@
+/* PALLETES */
+.primary{ color: #FF9900; }
+.secondary{ color: #3299BB; }
+.gray{ color: #BCBCBC; }
+.graylight{ color: #E9E9E9; }
+.graydark{ color: #424242; }
+
 h2{ 
 	font-family: Arial;  
 	font-size: 22px;
-	color: #2e6da4;
+	color: #424242;
 }
 .btn-search{ 
 	color: #333;

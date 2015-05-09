@@ -1140,7 +1140,7 @@
                     border: "none",
                     margin: "-5px 0 0 0",
                     padding: "12px",
-                    display: "node"
+                    display: "none"
                 },
                 ltr: {
                     left: "0",
