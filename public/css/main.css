@@ -49,7 +49,7 @@ body.slide-active { overflow-x: hidden; }
 #page-content { position: relative; padding-top: 70px; left: 0; }
 #page-content.slide-active { padding-top: 0px; }
 
-#slide-nav .navbar-toggle { cursor: pointer; position: relative; line-height: 0; float: left; margin: 0; width: 30px; height: 40px; padding-top: 10px; border: 0; background: transparent; }
+#slide-nav .navbar-toggle { cursor: pointer; position: relative; line-height: 0; float: left; margin: 0; width: 50px; height: 40px; padding-top: 10px; border: 0; background: transparent; }
 #slide-nav .navbar-toggle > .icon-bar { width: 100%; display: block; height: 3px; margin-top: 5px; }
 #slide-nav .navbar-toggle.slide-active .icon-bar { background: #3CA2A2; }
 
