@@ -10,12 +10,6 @@ var establishment = new Bloodhound({
 	prefetch : '/establishment?query=all'
 });
 
-var bestPictures = new Bloodhound({
-    datumTokenizer: Bloodhound.tokenizers.whitespace,
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    prefetch: '/data/films/post_1960.json'
-  });
-
 $('.prefetch-step-1 .typeahead').typeahead(null, {
 	name: "step-1",
 	source : services

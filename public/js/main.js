@@ -85,11 +85,17 @@ $(document).ready(function () {
     	postData.place = $('input[name="_place"]').val();
     });
     
-    $('.money').mask("#.##0,00", {reverse: true});
+    $('.money').maskMoney();
 
     
     $(".panel-list-services").click(function(){
         $(".panel-list-services").removeClass("active");
         $(this).addClass("active");
+    });
+    
+    $("input[name=_service], input[name=_place]").focus(function() {
+    	var offset = $(this).offset();
+    	
+    	$(document.body).scrollTop(offset.top -  $(this).height());
     });
 });
