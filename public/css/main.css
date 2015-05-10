@@ -75,7 +75,8 @@ body.slide-active { overflow-x: hidden; }
   .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form { border-color: #3CA2A2; } }
 @media (min-width: 768px) { #page-content { left: 0 !important; }
   .navbar.navbar-fixed-top.slide-active { position: fixed; }
-  .navbar-header { left: 0 !important; } }
+  .navbar-header { left: 0 !important; }
+  .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus { color: #DFECE6; background-color: #3CA2A2; } }
 #second-step, #third-step { display: none; }
 
 /*# sourceMappingURL=main.css.map */

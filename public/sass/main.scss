@@ -272,6 +272,10 @@ body.slide-active {
 	.navbar-header {
 		left: 0 !important;
 	}
+	.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+ 		color: $cor5;
+  		background-color: $cor3;
+	}
 }
 #second-step, #third-step {
 	display: none;
