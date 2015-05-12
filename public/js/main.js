@@ -1,5 +1,6 @@
 var postData = {};
-
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
 
 $(document).ready(function () {
     if(".navbar-toggle .slide-active" === true){
@@ -59,6 +60,8 @@ $(document).ready(function () {
     });
 
     $(".btn-step-1").click(function() {
+    	$(document.body).scrollTop(0);
+    	
     	$("#first-step").show();
     	$("#second-step").hide();
     	$("#third-step").hide();
@@ -71,6 +74,8 @@ $(document).ready(function () {
     });
     
     $(".btn-step-2").click(function() {
+    	$(document.body).scrollTop(0);
+    	
     	$("#first-step").hide();
     	$("#second-step").show();
     	
@@ -78,6 +83,8 @@ $(document).ready(function () {
     });
     
     $(".btn-step-3").click(function() {
+    	$(document.body).scrollTop(0);
+    	
     	$("#second-step").hide();
     	$("#third-step").show();
     	
@@ -85,9 +92,12 @@ $(document).ready(function () {
     	postData.place = $('input[name="_place"]').val();
     });
     
-    $('.money').maskMoney();
+    if(isAndroid) {
+    	$('.money').maskMoney();
+    } else {
+    	$('.money').mask({currencySymbol: ''});	
+    }
 
-    
     $(".panel-list-services").click(function(){
         $(".panel-list-services").removeClass("active");
         $(this).addClass("active");
