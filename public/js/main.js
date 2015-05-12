@@ -93,10 +93,10 @@ $(document).ready(function () {
     });
     
     if(isAndroid) {
-    	$('body').before("<h1>Android</h1>");
+    	$('.navbar-brand').before("Kotaki - Android");
     	$('.money').maskMoney();
     } else {
-    	$('body').before("<h1>Carlota</h1>");
+    	$('.navbar-brand').before("Kotaki - Carlota");
     	$('.money').mask({currencySymbol: ''});	
     }
 
