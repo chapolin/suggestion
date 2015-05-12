@@ -93,8 +93,10 @@ $(document).ready(function () {
     });
     
     if(isAndroid) {
+    	$('body').before("<h1>Android</h1>");
     	$('.money').maskMoney();
     } else {
+    	$('body').before("<h1>Carlota</h1>");
     	$('.money').mask({currencySymbol: ''});	
     }
 
