@@ -92,14 +92,6 @@ $(document).ready(function () {
     	postData.place = $('input[name="_place"]').val();
     });
     
-    if(isAndroid) {
-    	$('body').before(ua);
-    	$('.money').maskMoney();
-    } else {
-    	$('body').before(ua);
-    	$('.money').mask({currencySymbol: ''});	
-    }
-
     $(".panel-list-services").click(function(){
         $(".panel-list-services").removeClass("active");
         $(this).addClass("active");
@@ -110,4 +102,16 @@ $(document).ready(function () {
     	
     	$(document.body).scrollTop(offset.top -  $(this).height());
     });
+    
+    if(isAndroid) {
+    	$('.container-device').before("Android<br />");
+    	$('.container-device').before(ua);
+    	
+    	//$('.money').maskMoney();
+    } else {
+    	$('.container-device').before("Android<br />");
+    	$('.container-device').before(ua);
+    	
+    	//$('.money').mask({currencySymbol: ''});
+    }
 });
