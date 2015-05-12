@@ -1,6 +1,19 @@
 var postData = {};
-var ua = navigator.userAgent.toLowerCase();
-var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+var ua = navigator.userAgent;
+
+var device = {
+	Android: function() {
+	    return /Android/i.test(ua);
+	}, BlackBerry: function() {
+	    return /BlackBerry/i.test(ua);
+	}, iOS: function() {
+	    return /iPhone|iPad|iPod/i.test(ua);
+	}, Windows: function() {
+	    return /IEMobile/i.test(ua);
+	}, isAndroid: function() {
+	    return (this.Android() && (!this.BlackBerry() && !this.iOS() && !this.Windows()));
+	}
+};
 
 $(document).ready(function () {
     if(".navbar-toggle .slide-active" === true){
@@ -103,15 +116,15 @@ $(document).ready(function () {
     	$(document.body).scrollTop(offset.top -  $(this).height());
     });
     
-    if(isAndroid) {
+    if(device.isAndroid()) {
     	$('.container-device').before("Android<br />");
     	$('.container-device').before(ua);
     	
-    	//$('.money').maskMoney();
+    	$('.money').maskMoney();
     } else {
-    	$('.container-device').before("Android<br />");
+    	$('.container-device').before("Others<br />");
     	$('.container-device').before(ua);
     	
-    	//$('.money').mask({currencySymbol: ''});
+    	$('.money').mask({currencySymbol: ''});
     }
 });
