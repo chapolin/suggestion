@@ -21,6 +21,9 @@ html{
 }
 
 @media (max-width: 767px) {
+	.navbar {
+		margin-bottom: 0;
+	}
 	.navbar-inverse {
 		background-color: $cor2;
 		border-color: $cor3;
@@ -214,7 +217,7 @@ html{
 			z-index: 0;
 			top: -8px;
 			margin: $margin - 10;
-			margin-top: $margin + 60;
+			margin-top: $margin + 68;
 			.navbar-nav {
 				min-width: 0;
 				width: 100%;
