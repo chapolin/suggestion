@@ -21,9 +21,7 @@ html{
 }
 
 @media (max-width: 767px) {
-	.navbar {
-		margin-bottom: 0;
-	}
+
 	.navbar-inverse {
 		background-color: $cor2;
 		border-color: $cor3;
@@ -189,6 +187,7 @@ html{
 		}
 	}
 	.navbar-header, .navbar.navbar-fixed-top.slide-active {
+		margin-bottom: 0;
 		position: relative;
 	}
 	#slide-nav {
