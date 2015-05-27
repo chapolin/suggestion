@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongo = null;
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 app.use(express.bodyParser());
 app.set('view engine', 'ejs');
@@ -66,12 +66,12 @@ app.get('/services', function(request, response) {
 		var regExp = new RegExp("^" + query + ".*", "gi");
 		var suggestions = [];
 		
-		collection.find({"name": regExp}, {_id: 0}).toArray(function(error, data) {
-			for(var i in data) {
-				suggestions.push(data[i].name);
-			}
+		collection.find({"name": regExp}, {}).toArray(function(error, data) {
+//			for(var i in data) {
+//				suggestions.push(data[i].name);
+//			}
 			
-			response.json(suggestions);
+			response.json(data);
 			response.end();
 		});		
 	} else {

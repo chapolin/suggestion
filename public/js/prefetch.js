@@ -1,20 +1,39 @@
-var services = new Bloodhound({
-	datumTokenizer : Bloodhound.tokenizers.whitespace,
-	queryTokenizer : Bloodhound.tokenizers.whitespace,
-	prefetch : '/services?query=all'
+var bestPictures = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: '/services?query=%QUERY',
+      wildcard: '%QUERY'
+    }
 });
 
+$('.prefetch-step-1 .typeahead').typeahead({minLength: 2, highlight: true}, {
+    name: 'step-1',
+    display: 'name',
+    source: bestPictures,
+    templates: {
+      empty: 'Serviço não encontrado, cadastre!',
+      suggestion: Handlebars.compile('<span>{{name}}</span>')
+    }
+  });
+
+//var services = new Bloodhound({
+//	datumTokenizer : Bloodhound.tokenizers.whitespace,
+//	queryTokenizer : Bloodhound.tokenizers.whitespace,
+//	prefetch : '/services?query=all'
+//});
+//
 var establishment = new Bloodhound({
 	datumTokenizer : Bloodhound.tokenizers.whitespace,
 	queryTokenizer : Bloodhound.tokenizers.whitespace,
 	prefetch : '/establishment?query=all'
 });
-
-$('.prefetch-step-1 .typeahead').typeahead(null, {
-	name: "step-1",
-	source : services
-});
-
+//
+//$('.prefetch-step-1 .typeahead').typeahead(null, {
+//	name: "step-1",
+//	source : services
+//});
+//
 $('.prefetch-step-2 .typeahead').typeahead(null, {
 	source : establishment
 });
