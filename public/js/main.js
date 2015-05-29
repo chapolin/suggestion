@@ -15,6 +15,54 @@ var device = {
 	}
 };
 
+var setServiceValueFromSuggestion = function(obj) {
+	var id = obj.getAttribute("data-id"),
+		name = obj.getAttribute("data-name");
+	
+	buildPostData("service", id, name);
+};
+
+var setServiceValueFromButton = function(value) {
+	if (value && ((postData.hasOwnProperty("service") && 
+			postData.service.hasOwnProperty("name") && 
+			postData.service.name.toLocaleLowerCase().trim() != value.toLocaleLowerCase().trim())) || !postData.hasOwnProperty("service")) {
+		
+		buildPostData("service", 0, value);
+	}
+};
+
+var setEstablishmentValueFromSuggestion = function(obj) {
+	var id = obj.getAttribute("data-id"),
+	name = obj.getAttribute("data-name");
+	
+	buildPostData("establishment", id, name);
+};
+
+var setEstablishmentValueFromButton = function(value) {
+	if (value && postData.hasOwnProperty("establishment") && 
+			postData.establishment.hasOwnProperty("name") && 
+			postData.establishment.name.toLocaleLowerCase().trim() != value.toLocaleLowerCase().trim()) {
+		
+		buildPostData("establishment", 0, value);
+	}
+};
+
+var buildPostData = function(key, id, value) {
+	postData[key] = {
+		id : id,
+		name : value
+	}
+};
+
+function sendData() {
+    $.ajax({
+        url: '/services',
+        type: 'POST',
+        data: postData,
+        dataType: 'json'
+    });
+}
+
 $(document).ready(function () {
     if(".navbar-toggle .slide-active" === true){
         $("#first-step").addClass(".hidden");
@@ -66,7 +114,6 @@ $(document).ready(function () {
     var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
 
     $(window).on("resize", function () {
-
         if ($(window).width() > 767 && $('.navbar-toggle').is(':hidden')) {
             $(selected).removeClass('slide-active');
         }
@@ -92,7 +139,8 @@ $(document).ready(function () {
     	$("#first-step").hide();
     	$("#second-step").show();
     	
-    	postData.service = $('input[name="_service"]').val(); 
+    	
+    	setServiceValueFromButton($('input[name="_service"]').val());
     });
     
     $(".btn-step-3").click(function() {
@@ -101,8 +149,11 @@ $(document).ready(function () {
     	$("#second-step").hide();
     	$("#third-step").show();
     	
+    	setEstablishmentValueFromButton($('input[name="_place"]').val());
+    	
     	postData.value = $('input[name="_value"]').val();
-    	postData.place = $('input[name="_place"]').val();
+    	
+    	sendData();
     });
     
     $(".panel-list-services").click(function(){

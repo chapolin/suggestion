@@ -1,4 +1,4 @@
-var bestPictures = new Bloodhound({
+var services = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
@@ -7,57 +7,31 @@ var bestPictures = new Bloodhound({
     }
 });
 
+var establishment = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: '/establishment?query=%QUERY',
+      wildcard: '%QUERY'
+    }
+});
+
 $('.prefetch-step-1 .typeahead').typeahead({minLength: 2, highlight: true}, {
     name: 'step-1',
     display: 'name',
-    source: bestPictures,
+    source: services,
     templates: {
-      empty: 'Serviço não encontrado, cadastre!',
-      suggestion: Handlebars.compile('<span>{{name}}</span>')
+      empty: 'Serviço não encontrado, cadastre por favor!',
+      suggestion: Handlebars.compile('<a href="javascript:;" onclick="setServiceValueFromSuggestion(this)" data-id="{{_id}}" data-name="{{name}}">{{name}}</span>')
     }
-  });
-
-//var services = new Bloodhound({
-//	datumTokenizer : Bloodhound.tokenizers.whitespace,
-//	queryTokenizer : Bloodhound.tokenizers.whitespace,
-//	prefetch : '/services?query=all'
-//});
-//
-var establishment = new Bloodhound({
-	datumTokenizer : Bloodhound.tokenizers.whitespace,
-	queryTokenizer : Bloodhound.tokenizers.whitespace,
-	prefetch : '/establishment?query=all'
-});
-//
-//$('.prefetch-step-1 .typeahead').typeahead(null, {
-//	name: "step-1",
-//	source : services
-//});
-//
-$('.prefetch-step-2 .typeahead').typeahead(null, {
-	source : establishment
 });
 
-//
-//$('.prefetch-step-2 .typeahead').typeahead(null, {
-//	name: 'places',
-//	  display: 'name',
-//	source : places,
-//	templates: {
-//	    empty: [
-//	      '<div class="empty-message">',
-//	        'Não encontrado ocorrências, cadastre o seu local :)',
-//	      '</div>'
-//	    ].join('\n')
-//	  }
-//});
-
-//$('.prefetch-step-1 .typeahead').typeahead(null, {
-//	name: 'step-1',
-//	display: 'name',
-//	source: bestPictures,
-//	templates: {
-//		empty: '<div class="empty-message">Não encontrado ocorrências!</div>',
-//		suggestion: Handlebars.compile('<div><strong>{{value}}</strong> – {{year}}</div>')
-//	}
-//});
+$('.prefetch-step-2 .typeahead').typeahead({minLength: 2, highlight: true}, {
+    name: 'step-2',
+    display: 'name',
+    source: establishment,
+    templates: {
+      empty: 'Estabelecimento não encontrado, cadastre por favor!',
+      suggestion: Handlebars.compile('<a href="javascript:;" onclick="setEstablishmentValueFromSuggestion(this)" data-id="{{_id}}" data-name="{{name}}">{{name}}</span>')
+    }
+});
