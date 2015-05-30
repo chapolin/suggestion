@@ -1,0 +1,85 @@
+/* Bootstrap mixin breakpoints*/
+@mixin bs-xxs {
+    @media (max-width:480px) {
+        @content;
+    }
+}
+
+@mixin bs-xs {
+    @media (min-width: 481px) and (max-width:767px) {
+        @content;
+    }
+}
+
+@mixin bs-sm {
+    @media (min-width:768px) {
+        @content;
+    }
+}
+
+@mixin bs-md {
+    @media (min-width:992px) {
+        @content;
+    }
+}
+
+@mixin bs-lg {
+    @media (min-width:1200px) {
+        @content;
+    }
+}
+
+%vertical-center {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+%vertical-bottom {
+    position: relative;
+    top: 90%;
+    -webkit-transform: translateY(-90%);
+    -ms-transform: translateY(-90%);
+    transform: translateY(-90%);
+}
+
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin center($horizontal: true, $vertical: true) {
+    position: absolute;
+
+    @if ($horizontal and $vertical) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    } @else if ($horizontal) {
+        left: 50%;
+        transform: translate(-50%, 0);
+    } @else if ($vertical) {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+
+$image-path: '../img' !default;
+$fallback-extension: 'png' !default;
+
+@mixin background($name, $size:false){
+    background: url(#{$image-path}/#{$name}.svg) no-repeat center center;
+    background-size: cover;
+    
+    @if($size){
+        background-size: $size;
+    }
+    .no-svg &{
+        background: url(#{$image-path}/#{$name}.#{$fallback-extension}) no-repeat center center;
+        background-size: cover;
+    }
+}

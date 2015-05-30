@@ -1,3 +1,5 @@
+@import '_mixins';
+
 $cor1: #2D2D29;
 $cor2: #215A6D;
 $cor3: #3CA2A2;
@@ -20,7 +22,7 @@ html{
 	font-size: $sizeBase;
 }
 
-@media (max-width: 767px) {
+
 	.navbar {
 		margin-bottom: $margin -10 !important;
 	}
@@ -276,8 +278,10 @@ html{
 	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 		border-color: $cor3;
 	}
-}
-@media (min-width: 768px) {
+
+
+
+
 	#page-content {
 		left: 0 !important;
 	}
@@ -291,7 +295,6 @@ html{
  		color: $cor5;
   		background-color: $cor3;
 	}
-}
-#second-step, #third-step {
-	display: none;
-}
+	#second-step, #third-step {
+		display: none;
+	}
