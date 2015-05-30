@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var mongo = null;
 var port = process.env.PORT || 3000;
+var Step = require('step');
 
 app.use(express.bodyParser());
 app.set('view engine', 'ejs');
@@ -17,41 +18,6 @@ MongoClient.connect(
   if(!err) {
     console.log("We are connected in mongodb :)");
   }
-});
-
-app.get('/createData', function(request, response) {
-	var collection = mongo.collection('services');
-	
-	  var lotsOfDocs = [
-	                    {'name':'Alinhamento'}, 
-	                    {'name':'Cambagem'}, 
-	                    {'name':'Escova'}, 
-	                    {'name':'Progressiva'}, 
-	                    {'name':'Buffets'}, 
-	                    {'name':'Insulfim'}, 
-	                    {'name':'Balanciamento'}, 
-	                    {'name':'Aquecedores'} ,
-	                    {'name':'Caster'}
-	                    ];
-
-	  collection.insert(lotsOfDocs, {w:1}, function(err, result) {});
-	  
-	  response.send("OK");
-});
-
-app.get('/createDataEstab', function(request, response) {
-	var collection = mongo.collection('places');
-	
-	  var lotsOfDocs = [
-	                    {'name':'Caçula de Pneus'}, 
-	                    {'name':'Jassa'}, 
-	                    {'name':'Jacques Janine'}, 
-	                    {'name':'Continental'}
-	                    ];
-
-	  collection.insert(lotsOfDocs, {w:1}, function(err, result) {});
-	  
-	  response.send("OK");
 });
 
 app.get('/services', function(request, response) {
@@ -116,75 +82,95 @@ app.post('/services', function(request, response) {
 		var placeName = request.body.hasOwnProperty("establishment") ? request.body.establishment.name : null;
 		var value = request.body.hasOwnProperty("value") ? request.body.value : null;
 		
-		console.log(serviceId);
-		
-		if(serviceId == 0) {
-			var collection = mongo.collection('services');
-			
-			collection.findOne({name: serviceName}, function(err, doc) {
-		        if (doc) {
-		            console.log(doc);
-		        } else {
-		            console.log('Service data not found for name: ' + serviceName);
-		            
-		            var lotsOfDocs = [];
-		            
-		            var collection = mongo.collection('services');
-		            
-		            collection.insert({'name': serviceName}, {w:1}, function(err, result) {
-		            	console.log(result.ok, result.ops);
-		            	
-		            });
-		        }
-		    });			
-		}
-		
-		if(placeId == 0) {
-			var collection = mongo.collection('places');
-			
-			collection.findOne({name: placeName}, function(err, doc) {
-		        if (doc){
-		            console.log(doc);
-		        } else {
-		            console.log('Establishment data not found for name: ' + serviceName);
-		        }
-		    });	
-		}
-		
-		//var collection = mongo.collection('prices');
-		
-		var price = {
-			value: value, 
-			service: serviceId, 
-			place: placeId
-		};
-		
-		console.log(price);
-		
-//		if(price.value) {
-//			collection.insert(price, {w:1}, function(err, result) {});
-//		}
+		Step(
+			function() {
+				var callback = this;
+				
+				if(serviceId == 0) {
+					var collection = mongo.collection('services');
+					
+					collection.findOne({"name": { $regex: new RegExp(serviceName.trim(), "i")}}, function(err, doc) {
+				        if (doc) {
+				            console.log("Service from doc:", doc);
+				            
+				            callback(null, {
+			            		id: doc._id,
+			            		name: doc.name
+			            	});
+				        } else {
+				            console.log('Service data not found for name: ' + serviceName);
+				            
+				            var collection = mongo.collection('services');
+				            
+				            collection.insert({'name': serviceName}, {w:1}, function(err, result) {
+				            	console.log("Service from insert:", result.ops[0]);
+				            	
+				            	callback(null, {
+				            		id: result.ops[0]._id,
+				            		name: result.ops[0].name
+				            	});
+				            });
+				        }
+				    });			
+				} else if(serviceId != null) {
+					callback(null, {id: serviceId, name: serviceName});
+				} else {
+					callback(null, null);
+				}
+			}, function(error, service) {
+				var price = {
+					service: service != null ? service.id : null
+				};
+				var callback = this;
+				
+				if(placeId == 0) {
+					var collection = mongo.collection('places');
+					
+					collection.findOne({"name": { $regex: new RegExp(placeName.trim(), "i")}}, function(err, doc) {
+				        if (doc){
+				        	console.log("Establishment from doc:", doc);
+				        	
+				        	price.place = doc._id;
+				        	
+				        	callback(null, price);
+				        } else {
+				        	console.log('Establishment data not found for name: ' + placeName);
+				            
+				            var collection = mongo.collection('places');
+				            
+				            collection.insert({'name': placeName}, {w:1}, function(err, result) {
+				            	console.log("Establishment from insert:", result.ops[0]);
+				            	
+				            	price.place = result.ops[0]._id;
+				            	
+				            	callback(null, price);
+				            });
+				        }
+				    });	
+				} else if(placeId != null) {
+					price.place = placeId;
+					
+					callback(null, price);
+				} else {
+					callback(null, price);
+				}
+			}, function(error, price) {
+				if(value) {
+					price.value = value;
+					
+					console.log("With value", value, price);
+					
+					var collection = mongo.collection('prices');
+					
+					collection.insert(price, {w:1}, function(err, result) {});
+					
+					console.log("Insert successfully");
+				}
+				
+				response.send("OK");
+			}
+		);
 	}
-	
-	response.send("OK");
-	
-	// receber objeto post data
-	// if id = 0 verificar se existe o nome, pegar o id.
-	// montar o objeto price e salvar
-	
-//	if(value) {
-//		var collection = mongo.collection('prices');
-//		
-//		var price = {
-//			value: value, 
-//			service: "507f1f77bcf86cd799439011", 
-//			place: "507f1f77bcf86cd799439022"
-//		};
-//		
-//		collection.insert(price, {w:1}, function(err, result) {});
-//	}
-//	
-//	response.send("OK");
 });
 
 // make express look in the public directory for assets (css/js/img)
@@ -205,5 +191,5 @@ var server = app.listen(port, function() {
 	var host = server.address().address;
 	var port = server.address().port;
 
-	console.log('Example app listening at http://%s:%s', host, port);
+	console.log('Server started. Listening at http://%s:%s', host, port);
 });

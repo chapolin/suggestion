@@ -39,9 +39,9 @@ var setEstablishmentValueFromSuggestion = function(obj) {
 };
 
 var setEstablishmentValueFromButton = function(value) {
-	if (value && postData.hasOwnProperty("establishment") && 
+	if (value && ((postData.hasOwnProperty("establishment") && 
 			postData.establishment.hasOwnProperty("name") && 
-			postData.establishment.name.toLocaleLowerCase().trim() != value.toLocaleLowerCase().trim()) {
+			postData.establishment.name.toLocaleLowerCase().trim() != value.toLocaleLowerCase().trim())) || !postData.hasOwnProperty("establishment")) {
 		
 		buildPostData("establishment", 0, value);
 	}
@@ -153,7 +153,9 @@ $(document).ready(function () {
     	
     	postData.value = $('input[name="_value"]').val();
     	
-    	sendData();
+    	
+    	
+    	//sendData();
     });
     
     $(".panel-list-services").click(function(){
