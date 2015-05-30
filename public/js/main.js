@@ -153,9 +153,7 @@ $(document).ready(function () {
     	
     	postData.value = $('input[name="_value"]').val();
     	
-    	
-    	
-    	//sendData();
+    	sendData();
     });
     
     $(".panel-list-services").click(function(){
