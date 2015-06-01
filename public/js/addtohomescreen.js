@@ -222,9 +222,9 @@ ath.Class = function (options) {
 	this.options = _extend({}, ath.defaults);
 	_extend(this.options, options);
 	// override defaults that are dependent on each other
-	if ( options.debug && (typeof options.logging === "undefined") ) {
-		this.options.logging = true;
-	}
+//	if ( options.debug && (typeof options.logging === "undefined") ) {
+//		this.options.logging = true;
+//	}
 
 	// IE<9 so exit (I hate you, really)
 	if ( !_eventListener ) {
