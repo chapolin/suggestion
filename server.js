@@ -42,6 +42,8 @@ app.get('/services', function(request, response) {
 //				suggestions.push(data[i].name);
 //			}
 			
+			
+			response.header("Access-Control-Allow-Origin", "*");
 			response.json(data);
 			response.end();
 		});		
