@@ -20,6 +20,11 @@ MongoClient.connect(
   }
 });
 
+app.get('/shortcut', function(req, res) {
+    // EJS render automatically looks in the views folder
+    res.render('shortcut');
+});
+
 app.get('/services', function(request, response) {
 	var collection = mongo.collection('services');
 	var query = request.query.query;
