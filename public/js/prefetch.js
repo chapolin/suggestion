@@ -1,24 +1,25 @@
 var services = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    remote: {
-      url: '/services?query=%QUERY',
-      wildcard: '%QUERY'
+    prefetch: {
+        url: '/services?query=all',
+        ttl: 300
     }
 });
 
 var establishment = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    remote: {
-      url: '/establishment?query=%QUERY',
-      wildcard: '%QUERY'
-    }
+	prefetch: {
+	    url: '/establishment?query=all',
+        ttl: 300
+	}
 });
 
-$('.prefetch-step-1 .typeahead').typeahead({minLength: 2, highlight: true}, {
+$('.prefetch-step-1 .typeahead').typeahead({minLength: 1, highlight: true}, {
     name: 'step-1',
     display: 'name',
+    limit: 10,
     source: services,
     templates: {
       empty: 'Serviço não encontrado, cadastre por favor!',
@@ -26,9 +27,10 @@ $('.prefetch-step-1 .typeahead').typeahead({minLength: 2, highlight: true}, {
     }
 });
 
-$('.prefetch-step-2 .typeahead').typeahead({minLength: 2, highlight: true}, {
+$('.prefetch-step-2 .typeahead').typeahead({minLength: 1, highlight: true}, {
     name: 'step-2',
     display: 'name',
+    limit: 10,
     source: establishment,
     templates: {
       empty: 'Estabelecimento não encontrado, cadastre por favor!',

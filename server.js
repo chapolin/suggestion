@@ -42,8 +42,6 @@ app.get('/services', function(request, response) {
 //				suggestions.push(data[i].name);
 //			}
 			
-			
-			response.header("Access-Control-Allow-Origin", "*");
 			response.json(data);
 			response.end();
 		});		
@@ -93,7 +91,7 @@ app.post('/services', function(request, response) {
 			function() {
 				var callback = this;
 				
-				if(serviceId == 0) {
+				if(serviceId == 0 && serviceName) {
 					var collection = mongo.collection('services');
 					
 					collection.findOne({"name": { $regex: new RegExp(serviceName.trim(), "i")}}, function(err, doc) {
@@ -130,7 +128,7 @@ app.post('/services', function(request, response) {
 				};
 				var callback = this;
 				
-				if(placeId == 0) {
+				if(placeId == 0 && placeName) {
 					var collection = mongo.collection('places');
 					
 					collection.findOne({"name": { $regex: new RegExp(placeName.trim(), "i")}}, function(err, doc) {
