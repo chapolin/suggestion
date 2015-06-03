@@ -62,3 +62,41 @@ html { font-size: 62.5%; }
 #second-step, #third-step { display: none; }
 
 /*# sourceMappingURL=main.css.map */
+
+/* Warning message */
+.content-message {
+	position:relative;
+}
+
+.warning-message, .arrow-down-message{
+	display: none
+}
+
+.warning-message {font-family: Verdana;
+    padding:4px 5px 4px 5px;
+    position:absolute;
+    top:-22px;
+    left: 5px;
+    background:green;
+    width:auto;
+    height:16px;
+    text-align:center;
+    line-height: 10px;
+    font-size: 10px;
+    color: white;
+    text-shadow: 0 1px #902a27;
+    background: #e93631;
+    border-radius: 3px;
+}
+
+.arrow-down-message {
+	position: absolute;
+	top:-6px;
+	left: 15px;
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #e93631;
+}
+/* Warning message */

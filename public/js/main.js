@@ -1,5 +1,6 @@
 var postData = {};
 var ua = navigator.userAgent;
+var clear = true;
 
 var device = {
 	Android: function() {
@@ -54,14 +55,30 @@ var buildPostData = function(key, id, value) {
 	}
 };
 
-function sendData() {
+var sendData = function() {
     $.ajax({
         url: '/services',
         type: 'POST',
         data: postData,
         dataType: 'json'
     });
-}
+};
+
+var showErrorMessage = function(message) {
+	$(".warning-message").show();
+	$(".arrow-down-message").show();
+	$(".warning-message").html(message);
+	
+	clear = false;
+};
+
+var hideErrorMessage = function() {
+	$(".warning-message").hide();
+	$(".arrow-down-message").hide();
+	$(".warning-message").html("");
+	
+	clear = true;
+};
 
 $(document).ready(function () {
     if(".navbar-toggle .slide-active" === true){
@@ -134,13 +151,20 @@ $(document).ready(function () {
     });
     
     $(".btn-step-2").click(function() {
-    	$(document.body).scrollTop(0);
-    	
-    	$("#first-step").hide();
-    	$("#second-step").show();
-    	
-    	
-    	setServiceValueFromButton($('input[name="_service"]').val());
+    	if($('input[name="_service"]').val().trim() == "") {
+    		if(clear == true) {
+    			showErrorMessage("<strong>Atenção:</strong> Este campo é obrigatório!");
+        		
+        		setTimeout(hideErrorMessage, 5000);    			
+    		}
+    	} else {
+    		$(document.body).scrollTop(0);
+        	
+        	$("#first-step").hide();
+        	$("#second-step").show();
+        	
+        	setServiceValueFromButton($('input[name="_service"]').val());    		
+    	}
     });
     
     $(".btn-step-3").click(function() {
