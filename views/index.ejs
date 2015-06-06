@@ -7,6 +7,7 @@
 <title>Kotaki</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-padrao" role="navigation">
@@ -52,8 +53,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-            <ul id="login-dp" class="dropdown-menu">
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>-->
+            <a href="#" class="dropdown-toggle toggle-profile" data-toggle="dropdown"><div class="profile-userlittlepic"><img src="/imgs/danilo-trindade.jpg" class="img-circle img-responsive" alt=""></div></a>
+            <ul id="login-dp" class="dropdown-menu hidden">
                 <li>
                      <div class="row">
                         <div class="col-md-12">
@@ -87,6 +89,46 @@
                             Novo aqui? <a href="#"><b>Junte-se a nós</b></a>
                         </div>
                      </div>
+                </li>
+            </ul>
+            <ul id="login-dp" class="dropdown-menu">
+                <li>
+                    <div class="profile-userpic">
+                        <img src="/imgs/danilo-trindade.jpg" class="img-circle img-responsive" alt="">
+                    </div>
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            Danilo Trindade
+                        </div>
+                        <div class="profile-usertitle-job">
+                            Desenvolvedor
+                        </div>
+                        <div class="text-center">
+                            <a href="https://www.facebook.com/"><i id="social" class="fa fa-facebook-square fa-3x social-fb"></i></a>
+                            <a href="https://twitter.com/"><i id="social" class="fa fa-twitter-square fa-3x social-tw"></i></a>
+                            <a href="https://plus.google.com/"><i id="social" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
+                            <a href="mailto:chapolin@gmail.com"><i id="social" class="fa fa-envelope-square fa-3x social-em"></i></a>
+                        </div>
+                    </div>
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="#">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Visão geral </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Configurações </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                <i class="glyphicon glyphicon-star"></i>
+                                Favoritos </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </li>
