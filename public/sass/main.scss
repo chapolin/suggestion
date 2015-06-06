@@ -73,13 +73,16 @@ h2{
 .navbar-default .navbar-toggle .icon-bar{
 	background: $white;
 }
+.navbar-default .navbar-nav > li{
+	margin-right: 0;
+}
 #login-dp{
     min-width: 250px;
     padding: $padding + 4;
     overflow: hidden;
     background: $white;
     @include bs-xxs {
-    	background-color: inherit;
+    	background: inherit;
         color: $white;
     }
     @include bs-xs {
@@ -357,7 +360,6 @@ body.slide-active {
 }
 #page-content {
 	position: relative;
-	padding-top: $padding + 60;
 	left: 0;
 	&.slide-active {
 		padding-top: $padding - 10;
@@ -446,8 +448,32 @@ body.slide-active {
 }
 /* CONTENT */
 /* PROFILE */
+#profile-dp{
+    min-width: 250px;
+    padding: $padding + 4;
+    overflow: hidden;
+    background: $white;
+    @include border-radius(0);
+    @include bs-xxs {
+    	background: $white;
+        color: $black;
+    }
+    @include bs-xs {
+    	background: $white;
+        color: $black;
+    }
+    @include bs-sm {}
+    @include bs-md {}
+    @include bs-lg {}
+}
+.dropdown-toggle{
+	background: $azul1 !important;
+	color: $white !important;
+}
 .toggle-profile{
-	padding: 5px 0 !important;
+	background: none !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
 }
 .profile-userlittlepic img {
 	float: none;

@@ -59,6 +59,9 @@ h2 {
 .navbar-default .navbar-toggle .icon-bar {
   background: #fff; }
 
+.navbar-default .navbar-nav > li {
+  margin-right: 0; }
+
 #login-dp {
   min-width: 250px;
   padding: 14px;
@@ -66,7 +69,7 @@ h2 {
   background: #fff; }
   @media (max-width: 480px) {
     #login-dp {
-      background-color: inherit;
+      background: inherit;
       color: #fff; } }
   @media (min-width: 481px) and (max-width: 767px) {
     #login-dp {
@@ -325,7 +328,6 @@ body.slide-active {
 
 #page-content {
   position: relative;
-  padding-top: 70px;
   left: 0; }
   #page-content.slide-active {
     padding-top: 0px; }
@@ -401,8 +403,32 @@ body.slide-active {
 
 /* CONTENT */
 /* PROFILE */
+#profile-dp {
+  min-width: 250px;
+  padding: 14px;
+  overflow: hidden;
+  background: #fff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0; }
+  @media (max-width: 480px) {
+    #profile-dp {
+      background: #fff;
+      color: #000; } }
+  @media (min-width: 481px) and (max-width: 767px) {
+    #profile-dp {
+      background: #fff;
+      color: #000; } }
+
+.dropdown-toggle {
+  background: #215A6D !important;
+  color: #fff !important; }
+
 .toggle-profile {
-  padding: 5px 0 !important; }
+  background: none !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important; }
 
 .profile-userlittlepic img {
   float: none;
