@@ -56,6 +56,15 @@ h2 {
       color: #fff;
       background-color: #3CA2A2; }
 
+.navbar-default .navbar-toggle {
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 5px 15px; }
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #92C7A3; }
+
 .navbar-default .navbar-toggle .icon-bar {
   background: #fff; }
 
@@ -279,20 +288,6 @@ h2 {
   border: 1px solid #92C7A3; }
   .tt-input input {
     border: 0; }
-  .tt-input .btn-info {
-    margin-top: 2px;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #3CA2A2;
-    padding: 8px 8px 0px 10px; }
-    .tt-input .btn-info:hover {
-      color: #3CA2A2;
-      border: 0;
-      box-shadow: none;
-      background: none; }
-  .tt-input .glyphicon-search {
-    font-size: 23px; }
 
 .tt-suggestion {
   width: auto;
@@ -304,12 +299,24 @@ h2 {
   line-height: 30px;
   margin: 0 10px;
   padding: 6px;
-  border: 0;
+  border-bottom: 2px solid #41996c;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0;
   display: inline-block; }
+  .tt-suggestion:hover, .tt-suggestion.active:focus, .tt-suggestion:focus {
+    color: #fff;
+    background: #92C7A3;
+    border-bottom: 2px solid #529f78;
+    outline: none; }
+  .tt-suggestion:active, .tt-suggestion.active {
+    color: #fff;
+    background: #92C7A3;
+    border-top: 2px solid #39865f;
+    outline: none;
+    outline-offset: none;
+    margin-top: 2px; }
 
 .input-price {
   color: #215A6D;

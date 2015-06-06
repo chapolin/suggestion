@@ -70,6 +70,15 @@ h2{
     @include bs-md {}
     @include bs-lg {}
 }
+.navbar-default .navbar-toggle{
+	border: 0;
+	background: none;
+	padding: 0;
+	margin: 5px 15px;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	border-color: $verde2;
+}
 .navbar-default .navbar-toggle .icon-bar{
 	background: $white;
 }
@@ -312,23 +321,6 @@ h2{
 	input{
 		border: 0;
 	}
-	.btn-info{
-	    margin-top: $margin - 8;
-	    background: none;
-	    box-shadow: none;
-	    border: 0;
-	    color: $verde1;
-	    padding: $padding - 2 $padding - 2 $padding - 10 $padding;
-	    &:hover{
-	    	color: $verde1;
-			border: 0;
-		    box-shadow: none;
-		    background: none;
-	    }
-	}
-	.glyphicon-search{
-	    font-size: 23px;
-	}
 }
 .tt-suggestion {
 	width: auto;
@@ -339,9 +331,23 @@ h2{
 	line-height: 30px;
 	margin: 0 $margin;
 	padding: $padding - 4;
-	border: 0;
+	border-bottom:2px solid #41996c;
 	@include border-radius(0);
 	display: inline-block;
+	&:hover, &.active:focus, &:focus{
+		color: #fff;
+		background: $verde2;
+		border-bottom:2px solid #529f78;
+		outline: none;
+	}
+	&:active, &.active{
+		color: #fff;
+		background: $verde2;
+		border-top:2px solid #39865f;
+		outline: none;
+		outline-offset: none;
+		margin-top: 2px;
+	}
 }
 .input-price {
 	color: $azul1;
