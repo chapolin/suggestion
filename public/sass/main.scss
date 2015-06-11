@@ -1,6 +1,6 @@
 @import '_mixins';
 @import '_colors';
-@import '_fonts'; 
+@import '_fonts';
 
 /*
     @include bs-xxs {}
@@ -57,7 +57,7 @@ h2{
 			margin-right: 3px;
 		}
 		li > a {
-			color: $white; 
+			color: $white;
 			&:hover, &:focus, &:active, &:visited {
 				color: $white;
 				background-color: $verde1;
@@ -136,7 +136,7 @@ h2{
     background-color:#3b5998;
     &:hover{
     	color: $white;
-    	background-color:#496ebc; 
+    	background-color:#496ebc;
     }
 }
 .btn-tw{
@@ -399,7 +399,7 @@ body.slide-active {
 		margin: 0 !important;
 		padding: $padding !important;
 		height: 100%;
-	}	
+	}
 	.navbar-header {
 		margin: 0 auto;
 		padding: 0 $padding + 5;
@@ -510,7 +510,7 @@ body.slide-active {
 	font-size: 12px;
 	font-weight: 600;
 	margin-bottom: 15px;
-}   
+}
 .profile-usermenu {
   	margin-top: 30px;
 }
@@ -543,15 +543,15 @@ body.slide-active {
 	margin-left: -2px;
 }
 #social:hover {
-    -webkit-transform:scale(1.1); 
-	-moz-transform:scale(1.1); 
-	-o-transform:scale(1.1); 
+    -webkit-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	-o-transform:scale(1.1);
 			}
 #social {
 	-webkit-transform:scale(0.8);
 	-moz-transform:scale(0.8);
-	-o-transform:scale(0.8); 
-	-webkit-transition-duration: 0.5s; 
+	-o-transform:scale(0.8);
+	-webkit-transition-duration: 0.5s;
 	-moz-transition-duration: 0.5s;
 	-o-transition-duration: 0.5s;
 }
@@ -565,13 +565,13 @@ body.slide-active {
 	font-family: $font1;
 	@include font-size(1.2);
 	color: $verde1;
-    margin-top: 10px;    
+    margin-top: 10px;
 }
 .stepwizard-row {
     display: table-row;
 }
 .stepwizard {
-    display: table;     
+    display: table;
     width: 100%;
     position: relative;
 }
@@ -589,7 +589,7 @@ body.slide-active {
     background: $verde3;
     z-order: 0;
 }
-.stepwizard-step {    
+.stepwizard-step {
     display: table-cell;
     text-align: center;
     position: relative;
@@ -617,4 +617,60 @@ body.slide-active {
 	color: $white;
 	background-color: $verde1;
   	border-color: $verde2;
+}
+
+/* Warning message */
+.content-message {
+	position:relative;
+}
+
+.warning-message, .arrow-down-message{
+	display: none
+}
+
+.warning-message {font-family: Verdana;
+    padding:4px 5px 4px 5px;
+    position:absolute;
+    top:-22px;
+    left: 5px;
+    background:green;
+    width:auto;
+    height:16px;
+    text-align:center;
+    line-height: 10px;
+    font-size: 10px;
+    color: white;
+    text-shadow: 0 1px #902a27;
+    background: #e93631;
+    border-radius: 3px;
+}
+
+.arrow-down-message {
+	position: absolute;
+	top:-6px;
+	left: 15px;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #e93631;
+}
+/* Warning message */
+
+@media (max-width: 480px) {
+  body {
+    position: relative;
+    overflow:hidden;
+  }
+
+  .row #first-step.go-away{left: -400px}
+  .row #second-step.go-away{left: -400px}
+  .row #first-step.come-back{left: 0px}
+  .row #second-step.come-back{left: 0px}
+
+  #first-step{z-index: 3}
+  #second-step{z-index: 2}
+  #third-step{z-index: 1}
+
+  #first-step, #second-step, #third-step{background-color: #FFF; display:inline-block; left:0; position: absolute; transition: left .5s}
 }

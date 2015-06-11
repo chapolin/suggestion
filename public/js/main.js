@@ -19,15 +19,17 @@ var device = {
 var setServiceValueFromSuggestion = function(obj) {
 	var id = obj.getAttribute("data-id"),
 		name = obj.getAttribute("data-name");
-	
+
 	buildPostData("service", id, name);
+
+	$(".first-step .btn-step-2").html("Prosseguir >");
 };
 
 var setServiceValueFromButton = function(value) {
-	if (value && ((postData.hasOwnProperty("service") && 
-			postData.service.hasOwnProperty("name") && 
+	if (value && ((postData.hasOwnProperty("service") &&
+			postData.service.hasOwnProperty("name") &&
 			postData.service.name.toLocaleLowerCase().trim() != value.toLocaleLowerCase().trim())) || !postData.hasOwnProperty("service")) {
-		
+
 		buildPostData("service", 0, value);
 	}
 };
@@ -35,15 +37,15 @@ var setServiceValueFromButton = function(value) {
 var setEstablishmentValueFromSuggestion = function(obj) {
 	var id = obj.getAttribute("data-id"),
 	name = obj.getAttribute("data-name");
-	
+
 	buildPostData("establishment", id, name);
 };
 
 var setEstablishmentValueFromButton = function(value) {
-	if (value && ((postData.hasOwnProperty("establishment") && 
-			postData.establishment.hasOwnProperty("name") && 
+	if (value && ((postData.hasOwnProperty("establishment") &&
+			postData.establishment.hasOwnProperty("name") &&
 			postData.establishment.name.toLocaleLowerCase().trim() != value.toLocaleLowerCase().trim())) || !postData.hasOwnProperty("establishment")) {
-		
+
 		buildPostData("establishment", 0, value);
 	}
 };
@@ -68,7 +70,7 @@ var showErrorMessage = function(message) {
 	$(".warning-message").show();
 	$(".arrow-down-message").show();
 	$(".warning-message").html(message);
-	
+
 	clear = false;
 };
 
@@ -76,8 +78,70 @@ var hideErrorMessage = function() {
 	$(".warning-message").hide();
 	$(".arrow-down-message").hide();
 	$(".warning-message").html("");
-	
+
 	clear = true;
+};
+
+var changeCircleStep = function(indice) {
+	$(".stepwizard-step .btn-circle").removeClass("btn-primary").addClass("btn-default");
+	$(".stepwizard-step .btn-circle").eq(indice).removeClass("btn-default").addClass("btn-primary");
+};
+
+var firstStep = function() {
+	$(document.body).scrollTop(0);
+
+	//$("#first-step").show();
+	//$("#second-step").hide();
+	//$("#third-step").hide();
+
+	$("#first-step").addClass("come-back");
+	$("#second-step").addClass("come-back");
+
+	$('input[name="_service"]').val("");
+	$('input[name="_place"]').val("");
+	$('input[name="_value"]').val("");
+
+	postData = {};
+
+	changeCircleStep(0);
+};
+
+var secondStep = function() {
+	if($('input[name="_service"]').val().trim() == "") {
+		if(clear == true) {
+			showErrorMessage("<strong>Atenção:</strong> Este campo é obrigatório!");
+
+				setTimeout(hideErrorMessage, 5000);
+		}
+	} else {
+		$(document.body).scrollTop(0);
+
+			//$("#first-step").hide();
+			//$("#second-step").show();
+
+			$("#first-step").addClass("go-away");
+
+			setServiceValueFromButton($('input[name="_service"]').val());
+
+			changeCircleStep(1);
+	}
+};
+
+var thirdStep = function() {
+	$(document.body).scrollTop(0);
+
+	//$("#second-step").hide();
+	//$("#third-step").show();
+
+	$("#second-step").addClass("go-away");
+
+	setEstablishmentValueFromButton($('input[name="_place"]').val());
+
+	postData.value = $('input[name="_value"]').val();
+
+	changeCircleStep(2);
+
+	sendData();
 };
 
 $(document).ready(function () {
@@ -87,8 +151,8 @@ $(document).ready(function () {
 
     //stick in the fixed 100% height behind the navbar but don't wrap it
     $('#slide-nav.navbar-inverse').after($('<div class="inverse" id="navbar-height-col"></div>'));
-  
-    $('#slide-nav.navbar-default').after($('<div id="navbar-height-col"></div>'));  
+
+    $('#slide-nav.navbar-default').after($('<div id="navbar-height-col"></div>'));
 
     // Enter your ids or classes
     var toggler = '.navbar-toggle';
@@ -136,70 +200,35 @@ $(document).ready(function () {
         }
     });
 
-    $(".btn-step-1").click(function() {
-    	$(document.body).scrollTop(0);
-    	
-    	$("#first-step").show();
-    	$("#second-step").hide();
-    	$("#third-step").hide();
-    	
-    	$('input[name="_service"]').val("");
-    	$('input[name="_place"]').val("");
-    	$('input[name="_value"]').val("");
-    	
-    	postData = {};
-    });
-    
-    $(".btn-step-2").click(function() {
-    	if($('input[name="_service"]').val().trim() == "") {
-    		if(clear == true) {
-    			showErrorMessage("<strong>Atenção:</strong> Este campo é obrigatório!");
-        		
-        		setTimeout(hideErrorMessage, 5000);    			
-    		}
-    	} else {
-    		$(document.body).scrollTop(0);
-        	
-        	$("#first-step").hide();
-        	$("#second-step").show();
-        	
-        	setServiceValueFromButton($('input[name="_service"]').val());    		
-    	}
-    });
-    
-    $(".btn-step-3").click(function() {
-    	$(document.body).scrollTop(0);
-    	
-    	$("#second-step").hide();
-    	$("#third-step").show();
-    	
-    	setEstablishmentValueFromButton($('input[name="_place"]').val());
-    	
-    	postData.value = $('input[name="_value"]').val();
-    	
-    	sendData();
-    });
-    
+		// Configurando o primeiro passo
+		$(".btn-step-1").click(firstStep);
+
+		// Configurando o segundo passo
+		$(".btn-step-2").click(secondStep);
+
+		// Configurando o terceiro passo
+    $(".btn-step-3").click(thirdStep);
+
     $(".panel-list-services").click(function(){
         $(".panel-list-services").removeClass("active");
         $(this).addClass("active");
     });
-    
+
     $("input[name=_service], input[name=_place]").focus(function() {
     	var offset = $(this).offset();
-    	
+
     	$(document.body).scrollTop(offset.top -  $(this).height());
     });
-    
+
     if(device.isAndroid()) {
     	$('.container-device').before("Android<br />");
     	$('.container-device').before(ua);
-    	
+
     	$('.money').maskMoney();
     } else {
     	$('.container-device').before("Others<br />");
     	$('.container-device').before(ua);
-    	
+
     	$('.money').mask({currencySymbol: ''});
     }
 });
