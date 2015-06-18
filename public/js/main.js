@@ -1,6 +1,8 @@
 var postData = {};
 var ua = navigator.userAgent;
 var clear = true;
+const FIELD_LABEL_NEXT_STEP = "Prosseguir >";
+const FIELD_LABEL_REGISTER = "Cadastrar";
 
 var device = {
 	Android: function() {
@@ -22,7 +24,7 @@ var setServiceValueFromSuggestion = function(obj) {
 
 	buildPostData("service", id, name);
 
-	$(".first-step .btn-step-2").html("Prosseguir >");
+	$(".first-step .btn-step-2").html(FIELD_LABEL_NEXT_STEP);
 };
 
 var setServiceValueFromButton = function(value) {
@@ -90,16 +92,19 @@ var changeCircleStep = function(indice) {
 var firstStep = function() {
 	$(document.body).scrollTop(0);
 
-	//$("#first-step").show();
-	//$("#second-step").hide();
-	//$("#third-step").hide();
+	// $("#first-step").show();
+	// $("#second-step").hide();
+	// $("#third-step").hide();
 
 	$("#first-step").addClass("come-back");
 	$("#second-step").addClass("come-back");
+	$("#third-step").addClass("come-back").removeClass("show");
 
 	$('input[name="_service"]').val("");
 	$('input[name="_place"]').val("");
 	$('input[name="_value"]').val("");
+
+	$(".first-step .btn-step-2").html(FIELD_LABEL_REGISTER);
 
 	postData = {};
 
@@ -116,10 +121,8 @@ var secondStep = function() {
 	} else {
 		$(document.body).scrollTop(0);
 
-			//$("#first-step").hide();
-			//$("#second-step").show();
-
-			$("#first-step").addClass("go-away");
+		$("#first-step").addClass("go-away").removeClass("show");
+		$("#second-step").addClass("show");
 
 			setServiceValueFromButton($('input[name="_service"]').val());
 
@@ -130,10 +133,8 @@ var secondStep = function() {
 var thirdStep = function() {
 	$(document.body).scrollTop(0);
 
-	//$("#second-step").hide();
-	//$("#third-step").show();
-
-	$("#second-step").addClass("go-away");
+	$("#second-step").addClass("go-away").removeClass("show");
+	$("#third-step").addClass("show");
 
 	setEstablishmentValueFromButton($('input[name="_place"]').val());
 
@@ -219,16 +220,4 @@ $(document).ready(function () {
 
     	$(document.body).scrollTop(offset.top -  $(this).height());
     });
-
-    if(device.isAndroid()) {
-    	$('.container-device').before("Android<br />");
-    	$('.container-device').before(ua);
-
-    	$('.money').maskMoney();
-    } else {
-    	$('.container-device').before("Others<br />");
-    	$('.container-device').before(ua);
-
-    	$('.money').mask({currencySymbol: ''});
-    }
 });
