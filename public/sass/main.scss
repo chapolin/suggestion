@@ -777,16 +777,12 @@ body.slide-active {
   #first-step, #second-step, #third-step{
     @include bs-xxs {
       background-color: #FFF;
-      display:inline-block;
       left:0;
-      position: absolute;
       transition: left .5s
     }
     @include bs-xs {
       background-color: #FFF;
-      display:inline-block;
       left:0;
-      position: absolute;
       transition: left .5s
     }
     @include bs-sm {}
