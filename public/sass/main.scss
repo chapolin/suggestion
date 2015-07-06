@@ -340,11 +340,11 @@ h2{
 	color: $white;
 	background: $verde1;
 	line-height: 30px;
-	margin: 0 $margin;
+	margin: 0 $margin $margin - 8 $margin;
 	padding: $padding - 4;
 	border-bottom:2px solid #41996c;
 	@include border-radius(0);
-	display: inline-block;
+	display: block;
 	&:hover, &.active:focus, &:focus{
 		color: #fff;
 		background: $verde2;
