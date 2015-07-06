@@ -19,6 +19,7 @@ html{
 	font-size: $sizeBase;
 }
 body {
+  
   @include background('bg-ajuda-degrade');
   position: relative;
 
@@ -676,11 +677,9 @@ body.slide-active {
 
     @include bs-xxs {
       left: -400px;
-      display: inline;
     }
     @include bs-xs {
       left: -400px;
-      display: inline;
     }
     @include bs-sm {}
     @include bs-md {}

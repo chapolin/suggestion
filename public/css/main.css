@@ -632,12 +632,10 @@ body.slide-active {
   display: none; }
   @media (max-width: 480px) {
     .row #first-step.go-away, .row #second-step.go-away {
-      left: -400px;
-      display: inline; } }
+      left: -400px; } }
   @media (min-width: 481px) and (max-width: 767px) {
     .row #first-step.go-away, .row #second-step.go-away {
-      left: -400px;
-      display: inline; } }
+      left: -400px; } }
 
 .row #third-step.go-away {
   display: none; }
