@@ -19,7 +19,6 @@ html{
 	font-size: $sizeBase;
 }
 body {
-  padding-bottom: 300px;
   @include background('bg-ajuda-degrade');
   position: relative;
 
