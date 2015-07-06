@@ -67,19 +67,3 @@
         transform: translate(0, -50%);
     }
 }
-
-$image-path: '../img' !default;
-$fallback-extension: 'png' !default;
-
-@mixin background($name, $size:false){
-    background: url(#{$image-path}/#{$name}.svg) no-repeat center center;
-    background-size: cover;
-    
-    @if($size){
-        background-size: $size;
-    }
-    .no-svg &{
-        background: url(#{$image-path}/#{$name}.#{$fallback-extension}) no-repeat center center;
-        background-size: cover;
-    }
-}
