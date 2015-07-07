@@ -2,3 +2,5 @@ node_modules
 *.DS_Store
 *.swp
 public/.sass-cache
+*.log
+public/css/main.css.map
