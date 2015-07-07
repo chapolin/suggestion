@@ -776,14 +776,20 @@ body.slide-active {
 
   #first-step, #second-step, #third-step{
     @include bs-xxs {
-      background-color: #FFF;
-      left:0;
-      transition: left .5s
+		background-color: #FFF;
+		left:0;
+		-webkit-transition: margin-left 2s linear, background 3s  linear 2s;
+		-moz-transition: margin-left 2s linear, background 3s  linear 2s;
+		-o-transition: margin-left 2s linear, background 3s  linear 2s;
+		transition: margin-left 2s linear, background 3s  linear 2s;
     }
     @include bs-xs {
-      background-color: #FFF;
-      left:0;
-      transition: left .5s
+		background-color: #FFF;
+		left:0;
+		-webkit-transition: margin-left 2s linear, background 3s  linear 2s;
+		-moz-transition: margin-left 2s linear, background 3s  linear 2s;
+		-o-transition: margin-left 2s linear, background 3s  linear 2s;
+		transition: margin-left 2s linear, background 3s  linear 2s;
     }
     @include bs-sm {}
     @include bs-md {}
