@@ -19,8 +19,7 @@ html{
 	font-size: $sizeBase;
 }
 body {
-  padding-bottom: 300px;
-  @include background('bg-ajuda-degrade');
+  
   position: relative;
 
   @include bs-xxs {
@@ -341,11 +340,11 @@ h2{
 	color: $white;
 	background: $verde1;
 	line-height: 30px;
-	margin: 0 $margin;
+	margin: 0 $margin $margin - 8 $margin;
 	padding: $padding - 4;
 	border-bottom:2px solid #41996c;
 	@include border-radius(0);
-	display: inline-block;
+	display: block;
 	&:hover, &.active:focus, &:focus{
 		color: #fff;
 		background: $verde2;
@@ -677,11 +676,9 @@ body.slide-active {
 
     @include bs-xxs {
       left: -400px;
-      display: inline;
     }
     @include bs-xs {
       left: -400px;
-      display: inline;
     }
     @include bs-sm {}
     @include bs-md {}
