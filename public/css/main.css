@@ -692,11 +692,17 @@ body.slide-active {
   #first-step, #second-step, #third-step {
     background-color: #FFF;
     left: 0;
-    transition: left 0.5s; } }
+    -webkit-transition: margin-left 2s linear, background 3s  linear 2s;
+    -moz-transition: margin-left 2s linear, background 3s  linear 2s;
+    -o-transition: margin-left 2s linear, background 3s  linear 2s;
+    transition: margin-left 2s linear, background 3s  linear 2s; } }
 @media (min-width: 481px) and (max-width: 767px) {
   #first-step, #second-step, #third-step {
     background-color: #FFF;
     left: 0;
-    transition: left 0.5s; } }
+    -webkit-transition: margin-left 2s linear, background 3s  linear 2s;
+    -moz-transition: margin-left 2s linear, background 3s  linear 2s;
+    -o-transition: margin-left 2s linear, background 3s  linear 2s;
+    transition: margin-left 2s linear, background 3s  linear 2s; } }
 
 /*# sourceMappingURL=main.css.map */
