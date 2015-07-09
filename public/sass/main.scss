@@ -791,9 +791,10 @@ body.slide-active {
 }
 footer{
 	background: #215A6D;
+	padding: 20px 0;
 	p{
 		font-family: $font1;
 		@include font-size(1.2);
-		color: $verde1;		
+		color: $white;		
 	}
 }
