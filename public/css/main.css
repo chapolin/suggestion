@@ -702,4 +702,8 @@ body.slide-active {
 .center {
   text-align: center; }
 
+footer {
+  height: 60px;
+  background: #215A6D; }
+
 /*# sourceMappingURL=main.css.map */
