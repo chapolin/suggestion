@@ -703,7 +703,11 @@ body.slide-active {
   text-align: center; }
 
 footer {
-  height: 60px;
   background: #215A6D; }
+  footer p {
+    font-family: Arial;
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #3CA2A2; }
 
 /*# sourceMappingURL=main.css.map */

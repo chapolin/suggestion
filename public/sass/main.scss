@@ -790,6 +790,10 @@ body.slide-active {
 	text-align: center;
 }
 footer{
-	height: 60px;
 	background: #215A6D;
+	p{
+		font-family: $font1;
+		@include font-size(1.2);
+		color: $verde1;		
+	}
 }
