@@ -699,9 +699,6 @@ body.slide-active {
     left: 0;
     transition: left 0.5s; } }
 
-.icon-lg {
-  text-align: center; }
-
 .center {
   text-align: center; }
 
