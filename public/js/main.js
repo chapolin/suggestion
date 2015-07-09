@@ -146,17 +146,6 @@ var thirdStep = function() {
 };
 
 $(document).ready(function () {
-	window.onload = function() {
-		var divTres = document.getElementById("btn-step");
-		divTres.onclick = function() {
-		if (this.className == "cordiv") {
-			this.className = "";
-			} else {
-			this.className = "cordiv"
-			}
-		} 
-	}
-	
     if(".navbar-toggle .slide-active" === true){
         $("#first-step").addClass(".hidden");
     }
