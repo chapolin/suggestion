@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotaki</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-padrao" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <div class="profile-userlittlepic"><img src="/imgs/danilo-trindade.jpg" class="img-circle img-responsive" alt=""></div>
+            </button>
+            <a class="navbar-brand" href="#">Kotaki</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Clientes</b></a>
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                            <a href="faq-client.ejs">Dúvidas frequentes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Prestador de serviço</b></a>
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                            <a href="#">Dúvidas frequentes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Contato</b></a>
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    Fale conosco
+                                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputEmail2">Assunto</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="assunto" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputPassword2">Mensagem</label>
+                                            <textarea class="form-control" id="exampleInputPassword2" rows="3" placeholder="mensagem"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Minha conta</b> <span class="caret"></span></a>-->
+                    <ul id="login-dp" class="dropdown-menu">
+                        <li>
+                             <div class="row">
+                                <div class="col-md-12">
+                                    Login via
+                                    <div class="social-buttons">
+                                        <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                        <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                    </div>
+                                    ou
+                                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputEmail2">Email</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="exampleInputPassword2">Senha</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Senha" required>
+                                            <div class="help-block text-right forget-pass"><a href="">Esqueceu a senha?</a></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="connected">
+                                                <input type="checkbox"> mantenha-me conectado
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="bottom text-center join-us">
+                                    Novo aqui? <a href="#"><b>Junte-se a nós</b></a>
+                                </div>
+                             </div>
+                        </li>
+                    </ul>
+                    <ul id="profile-dp" class="dropdown-menu hidden">
+                        <li>
+                            <div class="profile-userpic">
+                                <img src="/imgs/danilo-trindade.jpg" class="img-circle img-responsive" alt="">
+                            </div>
+                            <div class="profile-usertitle">
+                                <div class="profile-usertitle-name">
+                                    Danilo Trindade
+                                </div>
+                                <div class="profile-usertitle-job">
+                                    Desenvolvedor
+                                </div>
+                                <div class="text-center">
+                                    <a href="https://www.facebook.com/"><i id="social" class="fa fa-facebook-square fa-3x social-fb"></i></a>
+                                    <a href="https://twitter.com/"><i id="social" class="fa fa-twitter-square fa-3x social-tw"></i></a>
+                                    <a href="https://plus.google.com/"><i id="social" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
+                                    <a href="mailto:chapolin@gmail.com"><i id="social" class="fa fa-envelope-square fa-3x social-em"></i></a>
+                                </div>
+                            </div>
+                            <div class="profile-usermenu">
+                                <ul class="nav">
+                                    <li class="active">
+                                        <a href="#">
+                                        <i class="glyphicon glyphicon-home"></i>
+                                        Visão geral </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        Configurações </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                        <i class="glyphicon glyphicon-star"></i>
+                                        Favoritos </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="page-content">
+    <div class="container">
+      <p class="question">Quais as formas de acessar o Kotaki?</p>
+      <p class="answer">O aplicativo está disponível para qualquer dispositivo que tenha acesso via browser.</p>
+      <p class="question">Quanto custa?</p>
+      <p class="answer">O Kotaki é gratuito para cadastrar os serviços, mas para destacar promoções na home e newsletter será cobrado um valor a definir.</p>
+      <p class="question">O que preciso fazer para ficar apto a prestar serviço?</p>
+      <p class="answer">Se cadastrar no site e preencher todas as informações do seu perfil.</p>
+      <p class="question">Outras dúvidas?</p>
+      <p class="answer">Fale com a gente pelo email contato@kotaki.tk</p>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div id="navbar" class="collapse navbar-collapse">
+          <p class="center">© 2015 Kotaki. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.maskMoney.min.js"></script>
+<script src="js/jquery.maskregex.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/handlebars.js"></script>
+<script src="js/typeahead.bundle.js"></script>
+<script src="js/prefetch.js"></script>
+</body>
+</html>
