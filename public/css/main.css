@@ -780,14 +780,17 @@ footer {
     font-size: 14px;
     font-size: 1.4rem;
     color: #215A6D;
-    text-decoration: uppercase;
+    text-decoration: none;
+    text-transform: uppercase;
     background: #DFECE6;
+    transition: background 0.5s ease;
     border: 2px solid #DFECE6;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px;
-    padding: 8px 15px; }
+    padding: 8px 15px;
+    display: inline-block; }
     .section-colabore .sign-up:hover {
       background: #215A6D;
       color: #DFECE6; }
