@@ -978,61 +978,6 @@ footer {
 	}
 }
 .section-compartilhe{
-	background: #215A6D;
-	h3 {
-	    font-family: $font1;
-	    @include font-size(4.2);
-	    color: $white;
-	    line-height: 32px;
-	    @include bs-xxs {}
-
-	    @include bs-xs {}
-
-	    @include bs-sm {}
-
-	    @include bs-md {}
-
-	    @include bs-lg {}
-	}
-	h4 {
-	    font-family: $font1;
-	    @include font-size(2.2);
-	    color: $white;
-	    line-height: 28px;
-	    @include bs-xxs {}
-
-	    @include bs-xs {}
-
-	    @include bs-sm {}
-
-	    @include bs-md {}
-
-	    @include bs-lg {}
-	}
-	p{
-  	font-family: $font1;
-    @include font-size(1.6);
-    color: $white;
-    line-height: 28px;
-    @include bs-xxs {}
-
-    @include bs-xs {}
-
-    @include bs-sm {}
-
-    @include bs-md {}
-
-    @include bs-lg {}	
-	}
-	.share-network{
-		list-style-type: none;
-		li{
-			margin-right: 10px;
-			float: left;
-		}
-	}
-}
-.section-colabore{
 	background: #DFECE6;
 	h3 {
 	    font-family: $font1;
@@ -1068,6 +1013,61 @@ footer {
   	font-family: $font1;
     @include font-size(1.6);
     color: $azul1;
+    line-height: 28px;
+    @include bs-xxs {}
+
+    @include bs-xs {}
+
+    @include bs-sm {}
+
+    @include bs-md {}
+
+    @include bs-lg {}	
+	}
+	.share-network{
+		list-style-type: none;
+		li{
+			margin-right: 20px;
+			float: left;
+		}
+	}
+}
+.section-colabore{
+	background: #215A6D;
+	h3 {
+	    font-family: $font1;
+	    @include font-size(4.2);
+	    color: $white;
+	    line-height: 32px;
+	    @include bs-xxs {}
+
+	    @include bs-xs {}
+
+	    @include bs-sm {}
+
+	    @include bs-md {}
+
+	    @include bs-lg {}
+	}
+	h4 {
+	    font-family: $font1;
+	    @include font-size(2.2);
+	    color: $white;
+	    line-height: 28px;
+	    @include bs-xxs {}
+
+	    @include bs-xs {}
+
+	    @include bs-sm {}
+
+	    @include bs-md {}
+
+	    @include bs-lg {}
+	}
+	p{
+  	font-family: $font1;
+    @include font-size(1.6);
+    color: $white;
     line-height: 28px;
     @include bs-xxs {}
 
