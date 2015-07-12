@@ -1057,11 +1057,13 @@ footer {
 	.sign-up{
 		font-family: $font1;
     @include font-size(1.4);
+    font-weight: bold;
     color: $azul1;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 1px;
     background: #DFECE6;
-    transition: background 0.5s ease;
+    transition: background .5s ease;
     border: 2px solid #DFECE6;
     @include border-radius(5px);
     padding: 8px 15px;

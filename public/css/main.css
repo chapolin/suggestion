@@ -779,11 +779,13 @@ footer {
     font-family: Arial;
     font-size: 14px;
     font-size: 1.4rem;
+    font-weight: bold;
     color: #215A6D;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 1px;
     background: #DFECE6;
-    transition: background 0.5s ease;
+    transition: background .5s ease;
     border: 2px solid #DFECE6;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
