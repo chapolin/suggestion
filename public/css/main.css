@@ -41,9 +41,12 @@ h2 {
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0; }
-  .navbar-default .navbar-brand {
+  .navbar-default h1 {
+    font-family: Arial;
+    font-size: 22px;
+    font-size: 2.2rem;
     color: #fff; }
-    .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    .navbar-default h1:hover, .navbar-default h1:focus {
       color: #fff; }
   .navbar-default .navbar-nav > .active > a {
     color: #fff;
@@ -54,7 +57,11 @@ h2 {
   .navbar-default .navbar-nav > li {
     margin-right: 3px; }
   .navbar-default .navbar-nav > li > a {
-    color: #fff; }
+    font-family: Arial;
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase; }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:visited {
       color: #fff;
       background-color: #3CA2A2; }
