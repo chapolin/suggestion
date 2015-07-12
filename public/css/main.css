@@ -1,10 +1,10 @@
 /* Bootstrap mixin breakpoints*/
 /*
-    @include bs-xxs {}
-    @include bs-xs {}
-    @include bs-sm {}
-    @include bs-md {}
-    @include bs-lg {}
+@include bs-xxs {}
+@include bs-xs {}
+@include bs-sm {}
+@include bs-md {}
+@include bs-lg {}
 */
 html,
 body {
