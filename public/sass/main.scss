@@ -1056,15 +1056,16 @@ footer {
 	}
 	.sign-up{
 		font-family: $font1;
-    @include font-size(1.6);
+    @include font-size(1.4);
     color: $azul1;
     text-decoration: uppercase;
     background: #DFECE6;
     border: 2px solid #DFECE6;
-    @include border-radius(5);
+    @include border-radius(5px);
     padding: 8px 15px;
     &:hover{
     	background: $azul1;
+    	color: #DFECE6;
     }
 	}
 }
