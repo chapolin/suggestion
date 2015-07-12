@@ -402,6 +402,8 @@ body.slide-active {
       min-width: 0;
       width: 100%;
       margin: 0; }
+      #slide-nav #slidemenu .navbar-nav .dropdown-menu {
+        position: relative; }
       #slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
         min-width: 0;
         width: 80%;
@@ -813,5 +815,12 @@ footer {
     .section-colabore .sign-up:hover {
       background: #215A6D;
       color: #DFECE6; }
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff; }
 
 /*# sourceMappingURL=main.css.map */
