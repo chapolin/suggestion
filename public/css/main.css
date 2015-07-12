@@ -124,7 +124,7 @@ body {
 .connected {
   font-size: 12px;
   font-size: 1.2rem;
-  color: #000;
+  color: #3e3e3e;
   line-height: 20px; }
   @media (max-width: 480px) {
     .connected {
@@ -202,7 +202,7 @@ body {
     .panel-list-services.active .panel-title {
       color: #fff; }
   .panel-list-services a {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 14px;
     font-size: 1.4rem;
     color: #3CA2A2;
@@ -210,7 +210,7 @@ body {
   .panel-list-services p {
     margin-bottom: 3px; }
   .panel-list-services.active a {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 16px;
     font-size: 1.6rem;
     color: #fff;
@@ -221,7 +221,7 @@ body {
 .panel-body {
   background: #fff; }
   .panel-body p {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 14px;
     font-size: 1.4rem;
     color: #215A6D; }
@@ -259,7 +259,7 @@ body {
   padding: 6px; }
 
 .promotion .title {
-  font-family: Arial;
+  font-family: "Open Sans";
   font-size: 14px;
   font-size: 1.4rem;
   color: #215A6D; }
@@ -287,7 +287,7 @@ body {
 
 .tt-suggestion {
   width: auto;
-  font-family: Arial;
+  font-family: "Open Sans";
   font-size: 16px;
   font-size: 1.6rem;
   color: #fff;
@@ -418,11 +418,11 @@ body.slide-active {
   @media (max-width: 480px) {
     #profile-dp {
       background: #fff;
-      color: #000; } }
+      color: #3e3e3e; } }
   @media (min-width: 481px) and (max-width: 767px) {
     #profile-dp {
       background: #fff;
-      color: #000; } }
+      color: #3e3e3e; } }
 
 .dropdown-toggle {
   background: #215A6D !important;
@@ -522,7 +522,7 @@ body.slide-active {
 /* PROFILE */
 /* STEPS */
 .stepwizard-step p {
-  font-family: Arial;
+  font-family: "Open Sans";
   font-size: 12px;
   font-size: 1.2rem;
   color: #3CA2A2;
@@ -703,7 +703,7 @@ footer {
   background: #215A6D;
   padding: 20px 0; }
   footer p {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 12px;
     font-size: 1.2rem;
     color: #fff; }
@@ -711,19 +711,19 @@ footer {
 .section-comofunciona {
   background: #DFECE6; }
   .section-comofunciona h3 {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 42px;
     font-size: 4.2rem;
     color: #215A6D;
     line-height: 32px; }
   .section-comofunciona h4 {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 22px;
     font-size: 2.2rem;
     color: #215A6D;
     line-height: 28px; }
   .section-comofunciona p {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 16px;
     font-size: 1.6rem;
     color: #f6f9fb;
@@ -732,19 +732,19 @@ footer {
 .section-compartilhe {
   background: #215A6D; }
   .section-compartilhe h3 {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 42px;
     font-size: 4.2rem;
     color: #215A6D;
     line-height: 32px; }
   .section-compartilhe h4 {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 22px;
     font-size: 2.2rem;
     color: #215A6D;
     line-height: 28px; }
   .section-compartilhe p {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 16px;
     font-size: 1.6rem;
     color: #f6f9fb;
@@ -753,19 +753,19 @@ footer {
 .section-colabore {
   background: #DFECE6; }
   .section-colabore h3 {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 42px;
     font-size: 4.2rem;
     color: #215A6D;
     line-height: 32px; }
   .section-colabore h4 {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 22px;
     font-size: 2.2rem;
     color: #215A6D;
     line-height: 28px; }
   .section-colabore p {
-    font-family: Arial;
+    font-family: "Open Sans";
     font-size: 16px;
     font-size: 1.6rem;
     color: #f6f9fb;
