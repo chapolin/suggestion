@@ -1024,6 +1024,13 @@ footer {
 
     @include bs-lg {}	
 	}
+	.share-network{
+		list-style-type: none;
+		li{
+			margin-right: 10px;
+			float: left;
+		}
+	}
 }
 .section-colabore{
 	background: #DFECE6;

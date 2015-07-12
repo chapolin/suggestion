@@ -747,6 +747,11 @@ footer {
     font-size: 1.6rem;
     color: #fff;
     line-height: 28px; }
+  .section-compartilhe .share-network {
+    list-style-type: none; }
+    .section-compartilhe .share-network li {
+      margin-right: 10px;
+      float: left; }
 
 .section-colabore {
   background: #DFECE6; }
