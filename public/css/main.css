@@ -26,27 +26,6 @@ body {
       position: relative;
       overflow: hidden; } }
 
-h2 {
-  font-family: Arial;
-  font-size: 42px;
-  font-size: 4.2rem;
-  color: #215A6D;
-  line-height: 32px; }
-
-h3 {
-  font-family: Arial;
-  font-size: 22px;
-  font-size: 2.2rem;
-  color: #215A6D;
-  line-height: 28px; }
-
-p.large {
-  font-family: Arial;
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #f6f9fb;
-  line-height: 28px; }
-
 /* NAVBAR */
 .navbar-default {
   background-color: #215A6D;
@@ -731,5 +710,65 @@ footer {
 
 .section-comofunciona {
   background: #DFECE6; }
+  .section-comofunciona h3 {
+    font-family: Arial;
+    font-size: 42px;
+    font-size: 4.2rem;
+    color: #215A6D;
+    line-height: 32px; }
+  .section-comofunciona h4 {
+    font-family: Arial;
+    font-size: 22px;
+    font-size: 2.2rem;
+    color: #215A6D;
+    line-height: 28px; }
+  .section-comofunciona p {
+    font-family: Arial;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #f6f9fb;
+    line-height: 28px; }
+
+.section-compartilhe {
+  background: #215A6D; }
+  .section-compartilhe h3 {
+    font-family: Arial;
+    font-size: 42px;
+    font-size: 4.2rem;
+    color: #215A6D;
+    line-height: 32px; }
+  .section-compartilhe h4 {
+    font-family: Arial;
+    font-size: 22px;
+    font-size: 2.2rem;
+    color: #215A6D;
+    line-height: 28px; }
+  .section-compartilhe p {
+    font-family: Arial;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #f6f9fb;
+    line-height: 28px; }
+
+.section-colabore {
+  background: #DFECE6; }
+  .section-colabore h3 {
+    font-family: Arial;
+    font-size: 42px;
+    font-size: 4.2rem;
+    color: #215A6D;
+    line-height: 32px; }
+  .section-colabore h4 {
+    font-family: Arial;
+    font-size: 22px;
+    font-size: 2.2rem;
+    color: #215A6D;
+    line-height: 28px; }
+  .section-colabore p {
+    font-family: Arial;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #f6f9fb;
+    line-height: 28px; }
 
 /*# sourceMappingURL=main.css.map */
