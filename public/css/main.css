@@ -782,11 +782,12 @@ footer {
     color: #215A6D;
     text-decoration: uppercase;
     background: #DFECE6;
+    border: 2px solid #DFECE6;
     -webkit-border-radius: 5;
     -moz-border-radius: 5;
     -ms-border-radius: 5;
     border-radius: 5;
-    border: 2px solid #DFECE6; }
+    padding: 8px 15px; }
     .section-colabore .sign-up:hover {
       background: #215A6D; }
 
