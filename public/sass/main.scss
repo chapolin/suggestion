@@ -563,8 +563,9 @@ body.slide-active {
 }
 
 .dropdown-toggle {
-  background: $azul1 !important;
-  color: $white !important;
+  background: $azul1;
+  color: $white;
+  position: relative;
 }
 
 .profile-userlittlepic img {
@@ -1044,4 +1045,6 @@ footer {
 	border-right: 10px solid transparent;
 	border-bottom: 10px solid $white;
 	z-index: 10;
+	position: absolute;
+	top: -10px;
 }

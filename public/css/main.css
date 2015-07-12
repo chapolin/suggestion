@@ -444,8 +444,9 @@ body.slide-active {
       color: #3e3e3e; } }
 
 .dropdown-toggle {
-  background: #215A6D !important;
-  color: #fff !important; }
+  background: #215A6D;
+  color: #fff;
+  position: relative; }
 
 .profile-userlittlepic img {
   float: none;
@@ -822,6 +823,8 @@ footer {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid #fff;
-  z-index: 10; }
+  z-index: 10;
+  position: absolute;
+  top: -10px; }
 
 /*# sourceMappingURL=main.css.map */
