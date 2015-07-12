@@ -1041,44 +1041,29 @@ footer {
 	    @include font-size(4.2);
 	    color: $white;
 	    line-height: 32px;
-	    @include bs-xxs {}
-
-	    @include bs-xs {}
-
-	    @include bs-sm {}
-
-	    @include bs-md {}
-
-	    @include bs-lg {}
 	}
 	h4 {
 	    font-family: $font1;
 	    @include font-size(2.2);
 	    color: $white;
 	    line-height: 28px;
-	    @include bs-xxs {}
-
-	    @include bs-xs {}
-
-	    @include bs-sm {}
-
-	    @include bs-md {}
-
-	    @include bs-lg {}
 	}
 	p{
   	font-family: $font1;
     @include font-size(1.6);
     color: $white;
     line-height: 28px;
-    @include bs-xxs {}
-
-    @include bs-xs {}
-
-    @include bs-sm {}
-
-    @include bs-md {}
-
-    @include bs-lg {}	
+	}
+	.sign-up{
+		font-family: $font1;
+    @include font-size(1.6);
+    color: $white;
+    text-decoration: uppercase;
+    background: $azul1;
+    @include border-radius(5);
+    border: 2px solid $azul1;
+    &:hover{
+    	background: #215A6D;
+    }
 	}
 }

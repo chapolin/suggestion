@@ -775,5 +775,19 @@ footer {
     font-size: 1.6rem;
     color: #fff;
     line-height: 28px; }
+  .section-colabore .sign-up {
+    font-family: Arial;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: uppercase;
+    background: #215A6D;
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    -ms-border-radius: 5;
+    border-radius: 5;
+    border: 2px solid #215A6D; }
+    .section-colabore .sign-up:hover {
+      background: #215A6D; }
 
 /*# sourceMappingURL=main.css.map */
