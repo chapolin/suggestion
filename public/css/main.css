@@ -48,6 +48,12 @@ h2 {
     color: #fff;
     line-height: 10px;
     margin-right: 30px; }
+    @media (max-width: 480px) {
+      .navbar-default h1 {
+        margin-left: 15px; } }
+    @media (min-width: 481px) and (max-width: 767px) {
+      .navbar-default h1 {
+        margin-left: 15px; } }
     .navbar-default h1:hover, .navbar-default h1:focus {
       color: #fff; }
   .navbar-default .navbar-nav > .active > a {

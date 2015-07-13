@@ -56,6 +56,13 @@ h2 {
     color: $white;
     line-height: 10px;
     margin-right: 30px;
+    @include bs-xxs {
+	    margin-left: 15px;
+	  }
+
+	  @include bs-xs {
+	  	margin-left: 15px; 
+	  }
     &:hover, &:focus {
       color: $white;
     }
